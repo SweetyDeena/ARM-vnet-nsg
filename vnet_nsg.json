@@ -17,6 +17,9 @@
       "name": "[variables('nsgName')]",
       "type": "Microsoft.Network/networkSecurityGroups",
       "location": "[resourceGroup().location]",
+       "tags": {
+            "displayName": "NSG with ARM"
+        },
       "properties": {
         "securityRules": [
           {
@@ -39,6 +42,9 @@
       "name": "[variables('vnetName')]",
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[resourceGroup().location]",
+        "tags": {
+            "displayName": "VNet with ARM"
+        },
       "dependsOn": [
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('nsgName'))]"
       ],
